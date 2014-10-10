@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :task do
-    message "MyString"
+    message "Eat an orange"
   end
 end
