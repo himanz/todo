@@ -11,15 +11,18 @@ module Api
 	  		respond_with Task.find(params[:id])
 	  	end
 
-	  	# def create
-	  	# 	respond_with Task.create(task_params)
-	  	# end
+	  	def create
+	  		@task = Task.create(task_params)
+	  		if @task.save
+	  			respond_with :api, @task
+	  		end
+	  	end
 
-	  	# private
+	  	private
 
-	  	# def task_params
-	  	# 	params.require(:task).permit(:message)
-	  	# end
+	  	def task_params
+	  		params.require(:task).permit(:message)
+	  	end
 	  end
 	end
 end

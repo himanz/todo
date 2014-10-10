@@ -18,5 +18,14 @@ describe Api::V1::TasksController do
 			expect(response).to be_success
 			expect(json['message']).to eq(task.message)
 		end
+
+		it "creates a task" do
+			create(:task)
+			post "api/tasks", :task => {message: "Hello"}
+			expect(response).to be_success
+			get "/api/tasks"
+			expect(json.length).to eq(2)
+			expect(json[1]["message"]).to eq("Hello")
+		end
 	end
 end
