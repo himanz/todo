@@ -12,7 +12,11 @@ module Api
 	  	end
 
 	  	def create
-	  		respond_with Task.create(task_params)
+	  		# respond_with Task.create(task_params)
+	  		@task = Task.new(task_params)
+	  		if @task.save
+	  			respond_with :api, @task
+	  		end
 	  	end
 
 	  	private
