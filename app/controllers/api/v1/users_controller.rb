@@ -12,8 +12,8 @@ module Api
 	  	end
 
 	  	def create
-	  		@user = User.create(task_params)
-	  		if @User.save
+	  		@user = User.new(user_params)
+	  		if @user.save
 	  			respond_with :api, @user
 	  		end
 	  	end
