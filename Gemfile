@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'devise'
 
 gem 'rack-cors', :require => 'rack/cors'
+gem 'simple_token_authentication'
 
 group :development, :test do
   gem "rspec-rails"

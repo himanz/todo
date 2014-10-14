@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 	respond_to :html, :json
+	acts_as_token_authentication_handler_for User
 	# before_filter :set_headers
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
